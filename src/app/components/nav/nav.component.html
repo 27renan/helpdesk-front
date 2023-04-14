@@ -1,1 +1,62 @@
-<p>nav works!</p>
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <img src="assets/img/side-image.svg" alt="Imagem de navegação" />
+    <mat-list role="list">
+      <!--Home-->
+      <mat-list-item role="listitem">
+        <div class="item" routerLink="home">
+          <i class="material-icons">home</i>
+          <p>Home</p>
+        </div>
+      </mat-list-item>
+
+      <!--Tecnicos-->
+      <mat-list-item role="listitem">
+        <div class="item" routerLink="tecnicos">
+          <i class="material-icons">account_circle</i>
+          <p>Técnicos</p>
+        </div>
+      </mat-list-item>
+
+      <!--Clientes-->
+      <mat-list-item role="listitem">
+        <div class="item" routerLink="clientes">
+          <i class="material-icons">person</i>
+          <p>Clientes</p>
+        </div>
+      </mat-list-item>
+
+      <!--Chamados-->
+      <mat-list-item role="listitem">
+        <div class="item" routerLink="chamados">
+          <i class="material-icons">support</i>
+          <p>Chamados</p>
+        </div>
+      </mat-list-item>
+
+      <!--GitHub-->
+      <mat-list-item role="listitem">
+        <div class="item">
+          <i class="material-icons">code</i>
+          <p>Github</p>
+        </div>
+      </mat-list-item>
+
+      <!--logout-->
+      <mat-list-item role="listitem">
+        <div class="item" (click)="logout()">
+          <i class="material-icons">logout</i>
+          <p>Logout</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <app-header></app-header>
+    <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
